@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Dimension Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image Dimension Converter</h1>
+    <p>Convert your images to portrait or landscape format without cropping</p>
+    
+    <div class="upload-container">
+      <form id="upload-form">
+        <div class="file-input">
+          <label for="image-upload">Choose an image</label>
+          <input type="file" id="image-upload" name="image" accept="image/*" required>
+          <div id="file-name">No file chosen</div>
+        </div>
+        
+        <div class="format-selection">
+          <h3>Select Output Format</h3>
+          <div class="format-options">
+            <label>
+              <input type="radio" name="format" value="portrait" checked>
+              <div class="format-box portrait">
+                <div class="format-icon">📱</div>
+                <span>Portrait</span>
+                <small>1080×1350</small>
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="format" value="landscape">
+              <div class="format-box landscape">
+                <div class="format-icon">🖼️</div>
+                <span>Landscape</span>
+                <small>1200×630</small>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" id="convert-btn">Convert Image</button>
+      </form>
+    </div>
+    
+    <div id="result" class="hidden">
+      <h2>Converted Image</h2>
+      <div class="result-container">
+        <div class="image-comparison">
+          <div class="original-image">
+            <h3>Original</h3>
+            <img id="original-img" src="" alt="Original image">
+          </div>
+          <div class="converted-image">
+            <h3>Converted</h3>
+            <img id="converted-img" src="" alt="Converted image">
+          </div>
+        </div>
+        <a id="download-link" class="download-btn" download>Download Image</a>
+      </div>
+    </div>
+    
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Processing your image...</p>
+    </div>
+    
+    <div id="error" class="hidden">
+      <p>An error occurred. Please try again.</p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
